@@ -1,0 +1,20 @@
+.cart {
+  margin: 0 2% !important;
+}
+
+.container {
+  margin-left: 2%;
+  margin-rigt: 2%;
+}
+
+.infected {
+  border-bottom: solid 10px blueviolet;
+}
+
+.recovered {
+  border-bottom: solid 10px greenyellow;
+}
+
+.deaths {
+  border-bottom: solid 10px red;
+}
