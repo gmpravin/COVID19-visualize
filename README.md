@@ -1,4 +1,4 @@
-#COVID19 visualization
+# COVID19 visualization
 ![main](https://raw.githubusercontent.com/gmpravin/covid19-visualize/master/Screenshot_2020-04-22%20React%20App.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
