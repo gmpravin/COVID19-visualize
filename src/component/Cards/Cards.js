@@ -5,7 +5,6 @@ import styles from "./Cards.module.css";
 import CountUp from "react-countup";
 import cn from "classnames";
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
-  console.log(confirmed);
   if (!confirmed) {
     return <div>Loading...</div>;
   }
@@ -16,13 +15,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
         direction="row"
         justify="center"
         alignItems="center"
-        spacing={5}
+        spacing={4}
       >
         <Grid
           item
           component={Card}
           xs={12}
-          md={3}
+          md={4}
           className={cn(styles.cart, styles.infected)}
         >
           <CardContent>
@@ -49,7 +48,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           item
           component={Card}
           xs={12}
-          md={3}
+          md={4}
           className={cn(styles.cart, styles.recovered)}
         >
           <CardContent>
@@ -76,7 +75,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           item
           component={Card}
           xs={12}
-          md={3}
+          md={4}
           className={cn(styles.cart, styles.deaths)}
         >
           <CardContent>
@@ -95,6 +94,33 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography varien="body2">Number of deaths of COVID-19</Typography>
+          </CardContent>
+        </Grid>
+        <Grid
+          item
+          component={Card}
+          xs={12}
+          md={4}
+          className={cn(styles.cart, styles.treatment)}
+        >
+          <CardContent>
+            <Typography color="textSecondary" gutterBottom>
+              Under Medical Treatment
+            </Typography>
+            <Typography varient="h5">
+              <CountUp
+                start={0}
+                end={confirmed.value - (recovered.value + deaths.value)}
+                duration={3.0}
+                separator=","
+              />
+            </Typography>
+            <Typography color="textSecondary" gutterBottom>
+              {new Date(lastUpdate).toDateString()}
+            </Typography>
+            <Typography varien="body2">
+              Number of recovered cases of COVID-19
+            </Typography>
           </CardContent>
         </Grid>
       </Grid>
